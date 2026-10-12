@@ -1,0 +1,19 @@
+
+<div class="card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">{{ trip.name }}</h3>
+
+    <p><strong>Code:</strong> {{ trip.code }}</p>
+    <p><strong>Resort:</strong> {{ trip.resort }}</p>
+    <p><strong>Length:</strong> {{ trip.length }}</p>
+    <p><strong>Price Per Person:</strong> {{ trip.perPerson }}</p>
+    <p>{{ trip.description }}</p>
+
+    <a
+      [routerLink]="['/edit-trip', trip.code]"
+      class="btn btn-primary">
+      Edit Trip
+    </a>
+  </div>
+</div>
+
