@@ -1,4 +1,3 @@
-
 <div class="card mb-3">
   <div class="card-body">
     <h3 class="card-title">{{ trip.name }}</h3>
@@ -14,6 +13,12 @@
       class="btn btn-primary">
       Edit Trip
     </a>
+
+    <button
+      type="button"
+      class="btn btn-danger ms-2"
+      (click)="deleteTrip()">
+      Delete Trip
+    </button>
   </div>
 </div>
-

@@ -1,15 +1,27 @@
-
 <div class="container mt-4">
   <h1>Travlr Getaways Admin</h1>
 
   <nav class="mb-4">
-    <a routerLink="/" class="btn btn-primary me-2">
-      View Trips
-    </a>
+    @if (authService.isLoggedIn()) {
+      <a routerLink="/" class="btn btn-primary me-2">
+        View Trips
+      </a>
 
-    <a routerLink="/add-trip" class="btn btn-success">
-      Add New Trip
-    </a>
+      <a routerLink="/add-trip" class="btn btn-success me-2">
+        Add New Trip
+      </a>
+
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="logout()">
+        Logout
+      </button>
+    } @else {
+      <a routerLink="/login" class="btn btn-primary">
+        Login
+      </a>
+    }
   </nav>
 
   <router-outlet></router-outlet>

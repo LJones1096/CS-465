@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Trip } from '../models/trip';
 import { TripDataService } from '../services/trip-data.service';
 import { TripCardComponent } from '../trip-card/trip-card.component';
+
 @Component({
   selector: 'app-trip-listing',
   standalone: true,
@@ -22,6 +23,29 @@ export class TripListingComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error retrieving trips:', error);
+      }
+    });
+  }
+
+  deleteTrip(tripCode: string): void {
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this trip?'
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
+    this.tripDataService.deleteTrip(tripCode).subscribe({
+      next: () => {
+        this.trips = this.trips.filter(
+          trip => trip.code !== tripCode
+        );
+        alert('Trip deleted successfully.');
+      },
+      error: (error) => {
+        console.error('Error deleting trip:', error);
+        alert('Unable to delete trip.');
       }
     });
   }
