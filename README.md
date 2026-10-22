@@ -30,6 +30,4 @@ As I prepare to transition into a career in technology, I believe the experience
 
 ### AI Usage Acknowledgment
 
-### AI Usage Acknowledgment
-
 I used Grammarly to assist with grammar, spelling, punctuation, and clarity. I reviewed the suggestions and made any necessary changes to ensure the final submission reflected my own work.
